@@ -29,7 +29,7 @@ def split_string_cve(str_cve):
     return result
 
 def order_cve_dict(cve_dict):
-    return dict(sorted(cve_dict.items(), key=lambda item: item[1]))
+    return dict(sorted(cve_dict.items(), reverse=True, key=lambda item: (item[1],item[0])))
 
 def print_cve_dict(cve_dict):
     print(", ".join(list(cve_dict.keys())))
@@ -52,7 +52,6 @@ if __name__=="__main__":
             else:
                 print(cve_id+': '+str(base_score)+' - '+cvssv3_string)
             
-            sleep(randint(1,3))
+            sleep(randint(3,10))
         
         print_cve_dict(order_cve_dict(cve_dict))
-
