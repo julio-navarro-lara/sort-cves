@@ -9,7 +9,7 @@ def get_cve_details(cve_id):
 
     # Search for the CVE in NVD
     results = nvdlib.searchCVE(cveId=cve_id)
-    print(results)
+    # print(results)
     if not results:
         return None, None, None
     cve = results[0]
